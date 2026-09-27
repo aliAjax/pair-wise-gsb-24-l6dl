@@ -223,6 +223,24 @@ input {
   color: #172033;
 }
 
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #172033;
+  font: inherit;
+  resize: vertical;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.status-plain {
+  background: #94a3b8;
+}
+
 .record-list {
   display: grid;
   gap: 12px;
@@ -268,6 +286,465 @@ input {
   }
 
   .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .span-2 {
+    grid-column: span 1;
+  }
+}
+
+/* ---------- 借用台 ---------- */
+
+.form-error {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #be123c;
+  line-height: 1.6;
+}
+
+.form-success {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  line-height: 1.6;
+}
+
+.register-btn {
+  margin-top: 16px;
+}
+
+/* 控制点侧栏 */
+.side-note {
+  color: #526070;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.point-list {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.point-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fbfdff;
+  font-size: 13px;
+}
+
+.point-code {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.point-holder {
+  color: #526070;
+  text-align: right;
+}
+
+.reset-btn {
+  width: 100%;
+  color: #64748b;
+}
+
+/* 模型档案 */
+.archive-section {
+  margin-bottom: 20px;
+}
+
+.archive-heading {
+  padding: 0 2px;
+}
+
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 16px;
+}
+
+.model-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 14px 36px rgba(31, 41, 55, 0.08);
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.model-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+
+.model-head h3 {
+  margin-bottom: 4px;
+}
+
+.model-meta {
+  color: #526070;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.status-pill {
+  flex: none;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+.pill-idle {
+  color: #065f46;
+  background: #d1fae5;
+}
+
+.pill-lent {
+  color: #854d0e;
+  background: #fef3c7;
+}
+
+.row-label {
+  display: block;
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.control-row .chips {
+  margin-bottom: 0;
+}
+
+.version-list,
+.copy-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.version-list li {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #fbfdff;
+}
+
+.version-list li.is-current {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--accent) 6%, #ffffff);
+}
+
+.version-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.version-line em {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--accent);
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+
+.version-note {
+  color: #526070;
+  font-size: 12.5px;
+}
+
+.coord-line {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #7c4a17;
+  line-height: 1.7;
+  word-break: break-all;
+}
+
+.empty-hint {
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.copy-list li {
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.copy-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background: transparent;
+  min-height: auto;
+  padding: 2px 0;
+  color: #047857;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.copy-code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  font-weight: 700;
+}
+
+.copy-sub {
+  color: #64748b;
+  font-weight: 400;
+  font-size: 12.5px;
+}
+
+.copy-detail {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.copy-meta {
+  font-size: 12.5px;
+  color: #526070;
+  margin-bottom: 8px;
+}
+
+.copy-detail table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+}
+
+.copy-detail th,
+.copy-detail td {
+  text-align: left;
+  border-top: 1px solid var(--border);
+  padding: 6px 8px;
+}
+
+.copy-detail th {
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* 借出表单 */
+.lend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.lend-actions {
+  display: flex;
+  align-items: end;
+}
+
+.lend-actions button {
+  width: 100%;
+}
+
+.model-actions {
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.loan-banner {
+  border: 1px solid #fde68a;
+  background: #fffbeb;
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.loan-banner.is-overdue {
+  border-color: #fecdd3;
+  background: #fff1f2;
+}
+
+.loan-banner-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.loan-banner-head strong {
+  color: #92400e;
+}
+
+.is-overdue .loan-banner-head strong {
+  color: #be123c;
+}
+
+.loan-banner-head span {
+  font-size: 13px;
+  color: #526070;
+}
+
+.loan-banner-dates {
+  font-size: 13px;
+  color: #526070;
+  margin: 0;
+}
+
+.overdue-note {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #be123c;
+}
+
+.return-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.return-row .primary-action {
+  white-space: nowrap;
+}
+
+/* 借用台账 */
+.ledger-panel {
+  margin-bottom: 20px;
+}
+
+.filter-chips button.is-active {
+  background: color-mix(in srgb, var(--primary) 16%, #ffffff);
+  border-color: color-mix(in srgb, var(--primary) 45%, #dbe3ef);
+  font-weight: 700;
+}
+
+.ledger-list {
+  display: grid;
+  gap: 12px;
+}
+
+.ledger-card {
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px;
+  background: #fbfdff;
+}
+
+.ledger-card.phase-overdue {
+  border-left-color: #e11d48;
+}
+
+.ledger-card.phase-active {
+  border-left-color: #b45309;
+}
+
+.ledger-head h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.ledger-badge {
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.badge-active {
+  color: #92400e;
+  background: #fef3c7;
+}
+
+.badge-overdue {
+  color: #ffffff;
+  background: #e11d48;
+}
+
+.badge-returned {
+  color: #065f46;
+  background: #d1fae5;
+}
+
+.kv-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px 18px;
+  margin: 12px 0 0;
+}
+
+.kv-grid dt {
+  color: #64748b;
+  font-size: 12.5px;
+  margin-bottom: 2px;
+}
+
+.kv-grid dd {
+  margin: 0;
+  font-size: 14px;
+}
+
+.kv-wide {
+  grid-column: 1 / -1;
+}
+
+.return-result {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.result-tag {
+  display: inline-block;
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.desk-footer {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 12.5px;
+  padding: 8px 0 4px;
+}
+
+@media (max-width: 860px) {
+  .model-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lend-grid,
+  .return-row,
+  .kv-grid {
     grid-template-columns: 1fr;
   }
 }
